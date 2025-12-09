@@ -1,0 +1,36 @@
+﻿@page
+@model StudentMvcApp.Areas.Identity.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-floating mb-3">
+        <input asp-for="Input.Email" class="form-control" placeholder="Email" />
+        <label asp-for="Input.Email">Email</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input asp-for="Input.Password" class="form-control" placeholder="Password" />
+        <label asp-for="Input.Password">Password</label>
+    </div>
+
+    <div class="form-check mb-3">
+        <input asp-for="Input.RememberMe" class="form-check-input" />
+        <label asp-for="Input.RememberMe" class="form-check-label">Remember me?</label>
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100">Log in</button>
+</form>
+
+<p>
+    <a asp-page="./Register">Register as a new user</a>
+</p>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
